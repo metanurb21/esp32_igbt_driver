@@ -36,7 +36,7 @@ There is no single or correct way to build an induction heater. I have built 3 o
 Apart from the driver board, you will need to build:
 A high power IGBT full-bridge inverter. There many schematics available from a google search.
 A copper pipe heating coil. 1/4" or 3/8" pipe
-A coupling transformer [I used 4 of these](https://www.easternvoltageresearch.com/ferrite-core-5000-1/) with Litz wire (multi stranded magnet wire rope you can make).
+A coupling transformer [I used 5 of these](https://www.easternvoltageresearch.com/ferrite-core-5000-1/) with 10 turns of Litz wire (the red multi stranded magnet wire rope you can make).
 A GTD (gate drive transformer). You can make or buy from [eastern voltage research](https://www.easternvoltageresearch.com/gate-transformer-kit-5000-1/).
 A liquid cooling network for the IGBT's and the the tank capacitor. Common sense and some basic building and fabricating skills required.
 Various different value power sources depending on the approach youy take., 5V, 12V, 15V.
@@ -61,3 +61,9 @@ For IGBT bricks, it's nice to have quality bricks like Infineon etc. You can get
 Once you've blown everything up once or twice and you are finally up and running, you should be looking something like this. Or better!. :)
 
 ![Image of fully operating unduction heater on work bench](https://github.com/metanurb21/esp32_igbt_driver/blob/main/images/induction-heating-snapshot.jpg)
+
+## Driving the IGBT gates.
+
+The idea is to rapidly switch on and off the gates of each of the dual IGBT bricks in an H-Bridge configuration. We are taking 120v or 240v AC from the wall, converting it to DC using the rectifier, using the microcontroller to switch the gates using an inverted and non-inverted PWM signal and then creating high frequency AC through a coupling transformer around one leg of the copper coil (creating a transformer). The copper coil and the resonant tank capacitor then create eddie currents inside the helical coil and when we place metal inside the work coil, the high frequency, high currents excite the electrons in the metal. They start moving really fast and you guessed it!, that creates heat. At some point the metal reaches it's curie point and looses it's magnetic properties. If you can crank a few more amps into it and keep the resonant frequency after this, it begins to melt. The goal is not always to melt things of course. This controlled heating procces can heat treat metals to different depths depending on what you are trying to achieve.
+
+WIP, more to come later...
