@@ -7,9 +7,7 @@ Getting it just right turned out be a bit of a project as you can imagine. I pic
 
 ## The Board Design
 
-I will put all the good stuff up here for the impatient and/or well informed and leave all the details below.
-
-I made the schematic in flux.ai [The board Gerber files.](https://github.com/metanurb21/esp32_igbt_driver/blob/main/files/metanurb21-esp32-pwm-ixd630-igbt-driver-v2-Gerbers-Versionedf32863.zip)
+I made the schematic in [flux.ai](https://www.flux.ai/metanurb21/esp32-pwm-ixd630-igbt-driver-v2?editor=schematic) [The board Gerber files.](https://github.com/metanurb21/esp32_igbt_driver/blob/main/files/metanurb21-esp32-pwm-ixd630-igbt-driver-v2-Gerbers-Versionedf32863.zip)
 
 [The components list](https://github.com/metanurb21/esp32_igbt_driver/blob/main/files/pick_and_place.csv)
 
@@ -33,21 +31,22 @@ Air coolled with heat sinks:
 
 There is no single or correct way to build an induction heater. I have built 3 or 4 differnt boards with different approaches. Each version required slightly different setup and components. The things you have to get right are the IGBT gate signals, adequate protection from voltage and current spikes and the proper blance of values to make the heating coil resonate so that it produces the maximum and most efficient electro magnetic coupling (power) to the intended work piece.
 
-## Build
+## To Build
 
 Apart from the driver board, you will need to build:
-A high power IGBT full-bridge inverter.
-A copper pipe heating coil.
-A coupling transformer with Litz wire.
-A GTD (gate drive transformer).
-A liquid cooling network for the IGBT's and the the tank capacitor.
-Various different value power sources depending on the approach youy take.
+A high power IGBT full-bridge inverter. There many schematics available from a google search.
+A copper pipe heating coil. 1/4" or 3/8" pipe
+A coupling transformer [I used 4 of these](https://www.easternvoltageresearch.com/ferrite-core-5000-1/) with Litz wire (multi stranded magnet wire rope you can make).
+A GTD (gate drive transformer). You can make or buy from eastern voltage research.
+A liquid cooling network for the IGBT's and the the tank capacitor. Common sense and some basic building and fabricating skills required.
+Various different value power sources depending on the approach youy take., 5V, 12V, 15V.
 
-## Aquire
+## To Aquire
 
 Other items you will need are: a variac is recomended 30A. Various capacitors and snubber caps. Some copper bus bars, A pond pump. Some high-heat rubber pipe, A large full bridge recifier, Heat sinks, fans, water blocks, large guage wire, magnet wire, some high heat fiberglass pipe insulation, a kiln crucible and I would sugest a prinkling of some ceramic fiber insulation here and there to protect things. It gets kinda scary your first time!
 Most of these things you can find on eBay, Amazon and your local hardware store.
 The larger capacitors, snubber caps and IGBT's you will need to source from eBay or Alibaba etc.
+For great quality stuff geared towards high voltage enthusiasts, I use https://www.easternvoltageresearch.com/
 
 For the large current water cooled capacitors, I recommend [Dawncap.](https://www.dawncapacitors.com/home). These things can get really pricey if you go top name brand. I would suggest for getting started, you buy from Dawncap. I have bought a few different ones over the past year, and I can attest that they hold up and get the job done. The caps I have are:
 
@@ -57,7 +56,7 @@ For the large current water cooled capacitors, I recommend [Dawncap.](https://ww
 
 :open_mouth: 950A!!!, getting real serious ya. All have served me well.
 
-For IGBT bricks, it's nice to have quality bricks like Infineon etc. You can get them used on eBay or you can get new cheaper ones on Alibaba. Again, you get what you pay for but while experimenting and blowing crap up, It's fine to go cheaper and then you can replace with the quality products when you are ready. (Some cheaper ones here)[https://www.aliexpress.us/item/3256805870685571.html?spm=a2g0o.order_list.order_list_main.277.21ef1802ginfNj&gatewayAdapt=glo2usa]. One note, it's not always better to go bigger, like 400A or 600A. The bigger they get, the slower the gate times. We want to keep things as fast as possible since we are dealing with very high frequency switching.
+For IGBT bricks, it's nice to have quality bricks like Infineon etc. You can get them used on eBay or you can get new cheaper ones on Alibaba. Again, you get what you pay for but while experimenting and blowing crap up, It's fine to go cheaper and then you can replace with the quality products when you are ready. [Some cheaper ones here](https://www.aliexpress.us/item/3256805870685571.html?spm=a2g0o.order_list.order_list_main.277.21ef1802ginfNj&gatewayAdapt=glo2usa). One note, it's not always better to go bigger, like 400A or 600A. The bigger they get, the slower the gate times. We want to keep things as fast as possible since we are dealing with very high frequency switching.
 
 Once you've blown everything up once or twice and you are finally up and running, you should be looking something like this. Or better!. :)
 
