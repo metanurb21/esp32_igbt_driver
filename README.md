@@ -76,6 +76,14 @@ The idea is to rapidly switch on and off the gates of each of the dual IGBT bric
 
 ![Image of PWM signal on oscilloscope](https://github.com/metanurb21/esp32_igbt_driver/blob/main/images/PWM.png)
 
+## The Gate Keepers
+
+The IGBT gates are directly connected to parallel 3Ω 5W resistors and shottky reverse diodes. This helps with giving a little dead-time to guard against shoot through. That's when the signals overlap and two gates get turned on at the same time creating a short to ground on one side of the bridge. Not good.
+
+![Image of parallel shottky diodes and resistors on igbt gates](https://github.com/metanurb21/esp32_igbt_driver/blob/main/images/gateKeepers.jpg)
+
+## How the coil works
+
 The copper coil and the resonant tank capacitor then create eddie currents inside the helical coil and when we place metal inside the work coil, the high frequency, high currents excite the atoms in the metal. They start moving really fast and you guessed it!, that creates heat. At some point the metal reaches it's curie point, the temperature at which a material loses its permanent magnetism. It takes a bit more continues power after this to reach the melting point though. You can google the melting tempratues of your intended victim. If you can crank a few more amps into it and keep the resonant frequency after curie point, it begins to melt. The goal is not always to melt things of course. This controlled heating procces can heat treat metals to different depths depending on what you are trying to achieve.
 
 WIP, more to come later...
