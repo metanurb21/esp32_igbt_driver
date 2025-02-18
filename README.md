@@ -15,7 +15,7 @@ I made the schematic in [flux.ai](https://www.flux.ai/metanurb21/esp32-pwm-ixd63
 
 ![3D representation of the driver ciruit board](https://github.com/metanurb21/esp32_igbt_driver/blob/main/images/igbt-driver.png)
 
-This setup is probably not the perfect PCB or design, like I said, I am just learning. This setup does not operate a [phase loop lock](https://en.wikipedia.org/wiki/Phase-locked_loop) to autotune, it's all manual. I have an LED that glows when I am in resonance and I can hear and see the current being drawn. My buddy calls it "Tune for maximum smoke" :wink:. That approach is my next build attempt. It does however work pretty well from 10khz to 100khz. I have two coils of different sizes and they resonate at around 82khz and 52khz. The current code is set to range from 10khz to 100khz. To change that, you just change some of the variables. I have ran this thing for hours and hit it pretty hard with decent voltage and amps. So far so good. The trick is to keep all the components cool. This is done with a combination of fans and water blocks with a pump circulating cool water around all the hot spots.
+This setup is probably not the perfect PCB or design, like I said, I am just learning. This setup does not operate a [phase loop lock](https://en.wikipedia.org/wiki/Phase-locked_loop) to autotune, it's all manual. I have an LED that glows when I am in resonance and I can hear and see the current being drawn. My buddy calls it "Tune for maximum smoke" :wink:. The PLL approach is my next build attempt. It does however work pretty well from 10khz to 100khz. I have two coils of different sizes and they resonate at around 82khz and 52khz. The current code is set to range from 10khz to 100khz. To change that, you just change some of the variables. I decided to go with a rotary encoder instead of an analog read from a potentiometer on the ESP32. It's a lot more accurate, doesn't bounce around at all and does not suffer from interference. I have ran this thing for hours and hit it pretty hard with decent voltage and amps. So far so good. Pay attention to what's going on and keep all the components cool. This is done with a combination of fans and water blocks with a pump circulating cool water around all the hot spots.
 
 Liquid cooled things:
 
@@ -37,13 +37,13 @@ Apart from the driver board, you will need to build:
 A high power IGBT full-bridge inverter. There many schematics available from a google search.
 A copper pipe heating coil. 1/4" or 3/8" pipe
 A coupling transformer [I used 4 of these](https://www.easternvoltageresearch.com/ferrite-core-5000-1/) with Litz wire (multi stranded magnet wire rope you can make).
-A GTD (gate drive transformer). You can make or buy from eastern voltage research.
+A GTD (gate drive transformer). You can make or buy from [eastern voltage research](https://www.easternvoltageresearch.com/gate-transformer-kit-5000-1/).
 A liquid cooling network for the IGBT's and the the tank capacitor. Common sense and some basic building and fabricating skills required.
 Various different value power sources depending on the approach youy take., 5V, 12V, 15V.
 
 ## To Aquire
 
-Other items you will need are: a variac is recomended 30A. Various capacitors and snubber caps. Some copper bus bars, A pond pump. Some high-heat rubber pipe, A large full bridge recifier, Heat sinks, fans, water blocks, large guage wire, magnet wire, some high heat fiberglass pipe insulation, a kiln crucible and I would sugest a prinkling of some ceramic fiber insulation here and there to protect things. It gets kinda scary your first time!
+Other items you will need are: [A 30A variac is recomended](https://www.ebay.com/itm/375079366063). [Various capacitors](https://www.ebay.com/itm/234559065702) and [snubber caps](https://www.ebay.com/itm/396177418199?_skw=snubber+capacitopr&itmmeta=01JMDDCM8SQPJGYN1PYTKN86BS&hash=item5c3e03a7d7:g:VE4AAOSwAYdno4WP&itmprp=enc%3AAQAKAAAA0FkggFvd1GGDu0w3yXCmi1c9mWgMXZX5fwHpwCae7OcaRXv1trcV3pJHvxD7N%2BYRzYReG5U4lVD76NHHILRzqmooxb7L2cbUsKP2JHcCTopAn1pdaqD1sa0glHSgaajgOATGAaY3qhzo%2BHvpVgDuLP%2FbjWafyUHbSjMkNS7ixHWHxHD6KvJA9vZjk2rkU%2FkQ3LNl9oBzikCl3rA7CmxaXTL2N42wPFiJ0QYJF6qiNYs4mD%2FDD%2FP0W9Pats5fIZlX6m4r4gOI%2FzUm9CFR3ZX5Mfk%3D%7Ctkp%3ABk9SR6bGsq2jZQ). Some copper bus bars, A pond pump. Some high-heat rubber pipe, A large full bridge recifier, Heat sinks, fans, water blocks, large guage wire, magnet wire, some high heat fiberglass pipe insulation, a kiln crucible and I would sugest a prinkling of some ceramic fiber insulation here and there to protect things. It gets kinda scary your first time!
 Most of these things you can find on eBay, Amazon and your local hardware store.
 The larger capacitors, snubber caps and IGBT's you will need to source from eBay or Alibaba etc.
 For great quality stuff geared towards high voltage enthusiasts, I use https://www.easternvoltageresearch.com/
