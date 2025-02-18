@@ -55,8 +55,10 @@ For the large current water cooled capacitors, I recommend [Dawncap.](https://ww
 [DAWNCAP DCC 3.5UF 1200V AC 120A Water &Wind cooled large current Big Current Resonant Capacitor](https://www.aliexpress.us/item/3256805388886798.html?spm=a2g0o.order_list.order_list_main.26.21ef1802Jx87JR&gatewayAdapt=glo2usa)
 [DAWNCAP DCC 2UF 600V 650A Water cooled large current Big Current Resonant Capacitor](https://www.aliexpress.us/item/3256805387045331.html?spm=a2g0o.order_list.order_list_main.31.21ef1802Jx87JR&gatewayAdapt=glo2usa)
 
-All have served me well.
+:open_mouth: 950A!!!, getting real serious ya. All have served me well.
+
+For IGBT bricks, it's nice to have quality bricks like Infineon etc. You can get them used on eBay or you can get new cheaper ones on Alibaba. Again, you get what you pay for but while experimenting and blowing crap up, It's fine to go cheaper and then you can replace with the quality products when you are ready. (Some cheaper ones here)[https://www.aliexpress.us/item/3256805870685571.html?spm=a2g0o.order_list.order_list_main.277.21ef1802ginfNj&gatewayAdapt=glo2usa]. One note, it's not always better to go bigger, like 400A or 600A. The bigger they get, the slower the gate times. We want to keep things as fast as possible since we are dealing with very high frequency switching.
 
 Once you've blown everything up once or twice and you are finally up and running, you should be looking something like this. Or better!. :)
 
-![Image of ull operating unduction heater on work bench](https://github.com/metanurb21/esp32_igbt_driver/blob/main/images/induction-heating-snapshot.jpg)
+![Image of fully operating unduction heater on work bench](https://github.com/metanurb21/esp32_igbt_driver/blob/main/images/induction-heating-snapshot.jpg)
