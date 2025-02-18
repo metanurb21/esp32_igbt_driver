@@ -7,7 +7,7 @@ Getting it just right turned out be a bit of a project as you can imagine. I pic
 
 ## The Board Design
 
-I made the schematic in [flux.ai](https://www.flux.ai/metanurb21/esp32-pwm-ixd630-igbt-driver-v2?editor=schematic) [The board Gerber files.](https://github.com/metanurb21/esp32_igbt_driver/blob/main/files/metanurb21-esp32-pwm-ixd630-igbt-driver-v2-Gerbers-Versionedf32863.zip)
+I made the schematic in [flux.ai](https://www.flux.ai/metanurb21/esp32-pwm-ixd630-igbt-driver-v2?editor=schematic). Here is a link to [The board Gerber files.](https://github.com/metanurb21/esp32_igbt_driver/blob/main/files/metanurb21-esp32-pwm-ixd630-igbt-driver-v2-Gerbers-Versionedf32863.zip)
 
 [The components list](https://github.com/metanurb21/esp32_igbt_driver/blob/main/files/pick_and_place.csv)
 
@@ -15,7 +15,7 @@ I made the schematic in [flux.ai](https://www.flux.ai/metanurb21/esp32-pwm-ixd63
 
 ![3D representation of the driver ciruit board](https://github.com/metanurb21/esp32_igbt_driver/blob/main/images/igbt-driver.png)
 
-This setup is probably not the perfect PCB or design, like I said, I am just learning. This setup does not operate a phase loop lock to autotune, it's all manual. That approach is my next build attempt. It does however work pretty well from 10khz to 100khz. I have two coils of different sizes and they resonate at around 82khz and 52khz. The current code is set to range from 10khz to 100khz. To change that, you just change some of the variables. I have ran this thing for hours and hit it pretty hard with decent voltage and amps. So far so good. The trick is to keep all the components cool. This is done with a combination of fans and water blocks with a pump circulating cool water around all the hot spots.
+This setup is probably not the perfect PCB or design, like I said, I am just learning. This setup does not operate a [phase loop lock](https://en.wikipedia.org/wiki/Phase-locked_loop) to autotune, it's all manual. I have an LED that glows when I am in resonance and I can hear and see the current being drawn. My buddy calls it "Tune for maximum smoke" :wink:. That approach is my next build attempt. It does however work pretty well from 10khz to 100khz. I have two coils of different sizes and they resonate at around 82khz and 52khz. The current code is set to range from 10khz to 100khz. To change that, you just change some of the variables. I have ran this thing for hours and hit it pretty hard with decent voltage and amps. So far so good. The trick is to keep all the components cool. This is done with a combination of fans and water blocks with a pump circulating cool water around all the hot spots.
 
 Liquid cooled things:
 
