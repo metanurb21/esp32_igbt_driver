@@ -3,7 +3,9 @@
 ![Some copper scrap melting in a graphite crucible.](https://github.com/metanurb21/esp32_igbt_driver/blob/main/images/melting-copper.jpg)
 
 I wanted to build a high power induction heater capable of melting metal, copper, iron, aluminium etc.
-Getting it just right turned out be a bit of a project as you can imagine. I picked up a little here and a little there from scouring the internet. Given my inexperience with circuitry and schematics, I needed it to be a simple as possible. I'm always playing around with microcontrollers and I am pretty comfortable coding, so I figured if I could do most the legwork with code, it should keep the circuit design to a minimum. Here is what I came up with.
+Getting it just right turned out be a bit of a project as you can imagine. I picked up a little here and a little there from scouring the internet.
+I kept finding quick little builds with a few cheap caps and a coat hanger with 12v supply claiming to be producing 600+watts. The math didn't add up. The popular trend of heating a thin box cutter blade red hot was just not doing it for me. I was soon to find out that to liquify a pound of copper or steel, I had to get $erious.
+Given my inexperience with circuitry and schematics, I wanted it to be a simple as possible until I found my way. I'm always playing around with microcontrollers and I am pretty comfortable coding, so I figured if I could do most the signal work with code, it should keep the circuit design to a minimum. An extra bonus to doing it this way is, it lets me change up the type of PWM signal I want without necessarily creating a new PCB. "Ramped QCWSSTC anyone?" Here is what I came up with so far.
 
 ## The Board Design
 
@@ -34,11 +36,17 @@ There is no single or correct way to build an induction heater. I have built 3 o
 ## To Build
 
 Apart from the driver board, you will need to build:
+
 A high power IGBT full-bridge inverter. There many schematics available from a google search.
-A copper pipe heating coil. 1/4" or 3/8" pipe
+
+A copper pipe heating coil. 1/4" or 3/8" pipe.
+
 A coupling transformer [I used 5 of these](https://www.easternvoltageresearch.com/ferrite-core-5000-1/) with 10 turns of Litz wire (the red multi stranded magnet wire rope you can make).
+
 A GTD (gate drive transformer). You can make or buy from [eastern voltage research](https://www.easternvoltageresearch.com/gate-transformer-kit-5000-1/).
+
 A liquid cooling network for the IGBT's and the the tank capacitor. Common sense and some basic building and fabricating skills required.
+
 Various different value power sources depending on the approach youy take., 5V, 12V, 15V.
 
 ## To Aquire
