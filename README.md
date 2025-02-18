@@ -15,7 +15,7 @@ I made the schematic in flux.ai [The board Gerber files.](https://github.com/met
 
 [The ESP32 driver code for Arduino IDE](https://github.com/metanurb21/esp32_igbt_driver/blob/main/code/esp32__igbt_gate_driver.ino)
 
-![The ciruit board](https://github.com/metanurb21/esp32_igbt_driver/blob/main/images/igbt-driver.png)
+![3D representation of the driver ciruit board](https://github.com/metanurb21/esp32_igbt_driver/blob/main/images/igbt-driver.png)
 
 This setup is probably not the perfect PCB or design, like I said, I am just learning. This setup does not operate a phase loop lock to autotune, it's all manual. That approach is my next build attempt. It does however work pretty well from 10khz to 100khz. I have two coils of different sizes and they resonate at around 82khz and 52khz. The current code is set to range from 10khz to 100khz. To change that, you just change some of the variables. I have ran this thing for hours and hit it pretty hard with decent voltage and amps. So far so good. The trick is to keep all the components cool. This is done with a combination of fans and water blocks with a pump circulating cool water around all the hot spots.
 
@@ -29,9 +29,11 @@ Air coolled with heat sinks:
 
 - The circuit board and anything else you want.
 
-## The components you will need to build?
+## The components you will need to build and aquire.
 
 There is no single or correct way to build an induction heater. I have built 3 or 4 differnt boards with different approaches. Each version required slightly different setup and components. The things you have to get right are the IGBT gate signals, adequate protection from voltage and current spikes and the proper blance of values to make the heating coil resonate so that it produces the maximum and most efficient electro magnetic coupling (power) to the intended work piece.
+
+## Build
 
 Apart from the driver board, you will need to build:
 A high power IGBT full-bridge inverter.
@@ -41,8 +43,20 @@ A GTD (gate drive transformer).
 A liquid cooling network for the IGBT's and the the tank capacitor.
 Various different value power sources depending on the approach youy take.
 
-Other items you will need are, a variac is recomended 30A. A pond pump. Some high-heat rubber pipe, A large full bridge recifier, Heat sinks, fans, water blocks, large guage wire, magnet wire, some high heat fiberglass pipe insulation, a kiln crucible and I would sugest a prinkling of some ceramic fiber insulation here and there to protect things. It gets kinda scary your first time!
+## Aquire
 
-Once you have blown everything up one or twice and you are up and running, you should be looking something like this. Or better!. :)
+Other items you will need are: a variac is recomended 30A. Various capacitors and snubber caps. Some copper bus bars, A pond pump. Some high-heat rubber pipe, A large full bridge recifier, Heat sinks, fans, water blocks, large guage wire, magnet wire, some high heat fiberglass pipe insulation, a kiln crucible and I would sugest a prinkling of some ceramic fiber insulation here and there to protect things. It gets kinda scary your first time!
+Most of these things you can find on eBay, Amazon and your local hardware store.
+The larger capacitors, snubber caps and IGBT's you will need to source from eBay or Alibaba etc.
 
-![Testing it out](https://github.com/metanurb21/esp32_igbt_driver/blob/main/images/induction-heating-snapshot.jpg)
+For the large current water cooled capacitors, I recommend [Dawncap.](https://www.dawncapacitors.com/home). These things can get really pricey if you go top name brand. I would suggest for getting started, you buy from Dawncap. I have bought a few different ones over the past year, and I can attest that they hold up and get the job done. The caps I have are:
+
+[DAWNCAP DCC-5H 2.6UF 700V 950A 400KVAR Water cooled large current Big Current Resonant Capacitor](https://www.aliexpress.us/item/3256805434541389.html?spm=a2g0o.order_list.order_list_main.21.21ef1802Jx87JR&gatewayAdapt=glo2usa)
+[DAWNCAP DCC 3.5UF 1200V AC 120A Water &Wind cooled large current Big Current Resonant Capacitor](https://www.aliexpress.us/item/3256805388886798.html?spm=a2g0o.order_list.order_list_main.26.21ef1802Jx87JR&gatewayAdapt=glo2usa)
+[DAWNCAP DCC 2UF 600V 650A Water cooled large current Big Current Resonant Capacitor](https://www.aliexpress.us/item/3256805387045331.html?spm=a2g0o.order_list.order_list_main.31.21ef1802Jx87JR&gatewayAdapt=glo2usa)
+
+All have served me well.
+
+Once you've blown everything up once or twice and you are finally up and running, you should be looking something like this. Or better!. :)
+
+![Image of ull operating unduction heater on work bench](https://github.com/metanurb21/esp32_igbt_driver/blob/main/images/induction-heating-snapshot.jpg)
