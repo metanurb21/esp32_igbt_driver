@@ -98,4 +98,4 @@ With a good impedance match between the TX (experiment with the number of litz w
 
 ## Short Video
 
-{% include youtube.html id="emqwikQgqFo&t=5s" %}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/emqwikQgqFo?si=bwq33EuN9eAvJe_I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
