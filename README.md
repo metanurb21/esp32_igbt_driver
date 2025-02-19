@@ -29,7 +29,7 @@ Air coolled with heat sinks:
 
 - The circuit board and anything else you want.
 
-## The components you will need to build and aquire.
+## The components you will need to build and acquire.
 
 There is no single or correct way to build an induction heater. I have built 3 or 4 differnt boards with different approaches. Each version required slightly different setup and components. The things you have to get right are the IGBT gate signals, adequate protection from voltage and current spikes and the proper blance of values to make the heating coil resonate so that it produces the maximum and most efficient electro magnetic coupling (power) to the intended work piece.
 
@@ -49,7 +49,7 @@ A liquid cooling network for the IGBT's and the the tank capacitor. Common sense
 
 Various different value power sources depending on the approach youy take., 5V, 12V, 15V.
 
-## To Aquire
+## To Acquire
 
 Other items you will need are: [A 30A variac is recomended](https://www.ebay.com/itm/375079366063). [Various capacitors](https://www.ebay.com/itm/234559065702) and [snubber caps](https://www.ebay.com/itm/396177418199?_skw=snubber+capacitopr&itmmeta=01JMDDCM8SQPJGYN1PYTKN86BS&hash=item5c3e03a7d7:g:VE4AAOSwAYdno4WP&itmprp=enc%3AAQAKAAAA0FkggFvd1GGDu0w3yXCmi1c9mWgMXZX5fwHpwCae7OcaRXv1trcV3pJHvxD7N%2BYRzYReG5U4lVD76NHHILRzqmooxb7L2cbUsKP2JHcCTopAn1pdaqD1sa0glHSgaajgOATGAaY3qhzo%2BHvpVgDuLP%2FbjWafyUHbSjMkNS7ixHWHxHD6KvJA9vZjk2rkU%2FkQ3LNl9oBzikCl3rA7CmxaXTL2N42wPFiJ0QYJF6qiNYs4mD%2FDD%2FP0W9Pats5fIZlX6m4r4gOI%2FzUm9CFR3ZX5Mfk%3D%7Ctkp%3ABk9SR6bGsq2jZQ). Some copper bus bars, A pond pump. Some high-heat rubber pipe, A large full bridge recifier, Heat sinks, fans, water blocks, large guage wire, magnet wire, some high heat fiberglass pipe insulation, a kiln crucible and I would sugest a prinkling of some ceramic fiber insulation here and there to protect things. It gets kinda scary your first time!
 Most of these things you can find on eBay, Amazon and your local hardware store.
@@ -72,15 +72,21 @@ Once you've blown everything up once or twice and you are finally up and running
 
 ## Driving the IGBT gates.
 
-The idea is to rapidly switch on and off the gates of each of the dual IGBT bricks in an H-Bridge configuration. We are taking 120v or 240v AC from the wall, converting it to DC using the rectifier, using the microcontroller to switch the gates using a PWM signal. The two IXDN gate driver chips are in an inverted and non-inverted configuration. They will create two signals 180° out of phase from each other alternating the on and off states of the gates in the H-Bridge configuration. We then create high frequency AC through a coupling transformer around one leg of the copper coil (creating a transformer). Here is a snapshot of me probing the gates on my oscilloscope. Nice and square. No major spikes or ringing. Could use a tad more dead time (overshoot), but that will get handled further down the pipeline.
+The idea is to rapidly switch on and off the gates of each of the dual IGBT bricks in an H-Bridge configuration. We are taking 120v or 240v AC from the wall, converting it to DC using the rectifier, using the microcontroller to switch the gates using a PWM signal.There is one input on the board to recieve the PWM signal which go to the IXD gate drivers. There are two IXDN gate driver chips on the board and are in an inverted and non-inverted configuration. They will create two signals 180° out of phase from each other alternating the on and off states of the gates in the H-Bridge configuration. There are two outputs from the controller PCB which are connected to a 1:1:1:1:1 GDT. One primary and two sets of four secondaries. These are connected to the IGBT's gate keepers. Here is a snapshot of me probing the gates on my oscilloscope. Nice and square. No major spikes or ringing. Could use a tad more dead time (overshoot), but that will get handled further down the pipeline.
 
 ![Image of PWM signal on oscilloscope](https://github.com/metanurb21/esp32_igbt_driver/blob/main/images/PWM.png)
 
 ## The Gate Keepers
 
-The IGBT gates are directly connected to parallel 3Ω 5W resistors and shottky reverse diodes. This helps with giving a little dead-time to guard against shoot through. That's when the signals overlap and two gates get turned on at the same time creating a short to ground on one side of the bridge. Not good.
+The IGBT gates are directly connected to parallel 3Ω 5W resistors and shottky reverse diodes which recieve the input from the GDT. This helps with giving a little dead-time to guard against shoot through. That's when the signals overlap and two gates get turned on at the same time creating a short to ground on one side of the bridge. Not good.
 
 ![Image of parallel shottky diodes and resistors on igbt gates](https://github.com/metanurb21/esp32_igbt_driver/blob/main/images/gateKeepers.jpg)
+
+## The Coupling Transformer
+
+The high-side of the IGBT's are connected to the coupling transformer via a large 3.5UF 1200V AC 120A DC blocking capacitor. This coupling transformer is fashioned from stringing together five large ferrite toriods taped together with kapton tape. Wound around this (for my setup) is ten turns of litz wire. This is a wire rope made from twisted together thinner 22awg enamled copper wire. You can do this with a screw gun or drill. This type of wire setup allows for much larger currents without getting overly hot. Initially I tried with 3awg thick jumper cable wire thinking it would be fine. It melted. :grin: This creates high frequency AC through a coupling transformer around one leg of the copper coil (creating a transformer).
+
+![Image of toroidal coupling transformer](https://github.com/metanurb21/esp32_igbt_driver/blob/main/images/couplingTx.jpg)
 
 ## How the coil works
 
