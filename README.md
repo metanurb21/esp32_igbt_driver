@@ -7,7 +7,7 @@ This is a work in progress.
 I wanted to build a high power induction heater capable of melting metal, copper, iron, aluminum etc.
 Getting it just right turned out be a bit of a project as you can imagine. I picked up a little here and a little there from scouring the internet.
 I kept finding quick little builds with a few cheap caps and a coat hanger with 12v supply claiming to be producing 600+watts. The math didn't add up. The popular trend of heating a thin box cutter blade red hot was just not doing it for me. I was soon to find out that to liquify a pound of copper or steel, I had to get $$-Serious-$$.
-Given my inexperience with circuitry and schematics, I wanted it to be as simple as possible until I found my way. I'm always playing around with micro controllers and I am pretty comfortable coding, so I figured if I could do most the signal work with code, it should keep the circuit design to a minimum. An extra bonus to doing it this way is, it lets me change up the type of PWM signal I want without necessarily creating a new PCB. "Ramped QCWSSTC anyone?" Here is what I came up with so far.
+Given my inexperience with circuitry and schematics, I wanted it to be as simple as possible until I found my way. I'm always playing around with micro controllers and I am pretty comfortable coding, so I figured if I could do most the signal work with code, it should keep the circuit design to a minimum. An extra bonus doing it this way is it lets me change up the type of PWM signal I want without necessarily creating a new PCB. I initially built the inverter for a another Tesla coil build I have planned. "Ramped QCWSSTC anyone?" Here is what I came up with so far.
 
 ## The Board Design
 
