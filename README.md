@@ -98,4 +98,4 @@ With a good impedance match between the TX (experiment with the number of litz w
 
 ## Short Video
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/emqwikQgqFo?si=bwq33EuN9eAvJe_I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+[![Watch the video](https://github.com/metanurb21/esp32_igbt_driver/blob/main/images/thumbnail.png)](https://www.youtube.com/watch?v=emqwikQgqFo&t=5s)
