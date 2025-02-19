@@ -47,7 +47,7 @@ A GTD (gate drive transformer). You can make or buy from [eastern voltage resear
 
 A liquid cooling network for the IGBT's and the the tank capacitor. Common sense and some basic building and fabricating skills required.
 
-Various different value power sources depending on the approach youy take., 5V, 12V, 15V.
+Various different value power sources depending on the approach you take. 5V, 12V, 15V.
 
 ## To Acquire
 
@@ -84,12 +84,14 @@ The IGBT gates are directly connected to parallel 3Ω 5W resistors and shottky r
 
 ## The Coupling Transformer
 
-The high-side of the IGBT's are connected to the coupling transformer via a large 3.5UF 1200V AC 120A DC blocking capacitor. This coupling transformer is fashioned from stringing together five large ferrite toriods taped together with kapton tape. Wound around this (for my setup) is ten turns of litz wire. This is a wire rope made from twisted together thinner 22awg enamled copper wire. You can do this with a screw gun or drill. This type of wire setup allows for much larger currents without getting overly hot. Initially I tried with 3awg thick jumper cable wire thinking it would be fine. It melted. :grin: This creates high frequency AC through a coupling transformer around one leg of the copper coil (creating a transformer).
+The high-side of the IGBT's are connected to the coupling transformer via a large 3.5UF 1200V AC 120A DC blocking capacitor. This coupling transformer is fashioned from stringing together five large ferrite toriods taped together with kapton tape. Wound around this (for my setup) is ten turns of litz wire. This is a wire rope made from twisted together thinner 22awg enamled copper wire. You can do this with a screw gun or drill. This type of wire setup allows for much larger currents without getting overly hot. Initially I tried with 3awg thick jumper cable wire thinking it would be fine. It melted. :grin: This creates high frequency AC through a coupling transformer around one leg of the copper coil.
 
 ![Image of toroidal coupling transformer](https://github.com/metanurb21/esp32_igbt_driver/blob/main/images/couplingTx.jpg)
 
 ## How the coil works
 
-The copper coil and the resonant tank capacitor then create eddie currents inside the helical coil and when we place metal inside the work coil, the high frequency, high currents excite the atoms in the metal. They start moving really fast and you guessed it!, that creates heat. At some point the metal reaches it's curie point, the temperature at which a material loses its permanent magnetism. It takes a bit more continues power after this to reach the melting point though. You can google the melting tempratues of your intended victim. If you can crank a few more amps into it and keep the resonant frequency after curie point, it begins to melt. The goal is not always to melt things of course. This controlled heating procces can heat treat metals to different depths depending on what you are trying to achieve.
+The copper coil and the resonant tank capacitor then create high frequency AC current flowing through the coil generating a changing magnetic field, which in turn induces electrical currents (eddy currents) within the work piece, causing it to heat up due to its electrical resistance. At some point the metal reaches it's curie point, the temperature at which a material loses its permanent magnetism. Note: it does not have to be a ferrous metal (metals that contain iron as their main component). The image at the top of the page is melted copper. It takes a bit more continues power after this to reach the melting point though. You can google the melting tempratues of your intended victim. If you can crank a few more amps into it and keep the resonant frequency after curie point, it begins to melt. The goal is not always to melt things of course. This controlled heating procces can heat treat metals to different depths depending on what you are trying to achieve. As you can see below, even the fiberglass protective shielding on the work coil is starting to char. :laughing: Must be doing something right.
+
+![Image of copper work coil](https://github.com/metanurb21/esp32_igbt_driver/blob/main/images/copperCoil.jpg)
 
 WIP, more to come later...
