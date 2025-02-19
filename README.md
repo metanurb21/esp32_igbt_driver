@@ -1,4 +1,6 @@
-# ESP32 IXDI & IXDN IGBT gate driver used for DIY induction heater.
+# ESP32 Driving IXDI & IXDN IGBT gate drivers used for a DIY induction heater.
+
+This is a work in progress.
 
 ![Some copper scrap melting in a graphite crucible.](https://github.com/metanurb21/esp32_igbt_driver/blob/main/images/melting-copper.jpg)
 
@@ -31,7 +33,7 @@ Air coolled with heat sinks:
 
 ## The components you will need to build and acquire.
 
-There is no single or correct way to build an induction heater. I have built 3 or 4 different boards with different approaches. Each version required slightly different setup and components. The things you have to get right are the IGBT gate signals, adequate protection from voltage and current spikes and the proper balance of values to make the heating coil resonate so that it produces the maximum and most efficient electro magnetic coupling (power) to the intended work piece.
+There is no single or correct way to build an induction heater. I have built 3 or 4 different boards with different approaches. Each version required slightly different setup and components. This really stared for me from an article by [Teslascience Hacks](https://teslascience.wordpress.com/autotuning-9kw-induction-forge-version-1-2/). Check it out if you want another way to built one. The things you have to get right are the IGBT gate signals, adequate protection from voltage and current spikes and the proper balance of values to make the heating coil resonate so that it produces the maximum and most efficient electro magnetic coupling (power) to the intended work piece.
 
 ## To Build
 
