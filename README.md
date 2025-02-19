@@ -96,4 +96,6 @@ With a good impedance match between the TX (experiment with the number of litz w
 
 ![Image of copper work coil](https://github.com/metanurb21/esp32_igbt_driver/blob/main/images/copperCoil.jpg)
 
-WIP, more to come later...
+## Short Video
+
+[![Watch the video](https://github.com/metanurb21/esp32_igbt_driver/blob/main/images/thumbnail.png)](https://youtu.be/emqwikQgqFo?si=wgxHpA-J4hBY3f1u)
