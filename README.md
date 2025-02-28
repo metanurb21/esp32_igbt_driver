@@ -11,7 +11,7 @@ Given my inexperience with circuitry and schematics, I wanted it to be as simple
 
 ## The Board Design
 
-I made the schematic in [flux.ai](https://www.flux.ai/metanurb21/esp32-pwm-ixd630-igbt-driver-v2?editor=schematic). Here is a link to [The board Gerber files.](https://github.com/metanurb21/esp32_igbt_driver/blob/main/files/metanurb21-esp32-pwm-ixd630-igbt-driver-v2-Gerbers-Versionedf32863.zip)
+I made the schematic in [flux.ai](https://www.flux.ai/metanurb21/esp32-pwm-ixd630-igbt-driver-v2?editor=schematic). Here is a link to [The board Gerber files.](https://github.com/metanurb21/esp32_igbt_driver/blob/main/files/metanurb21-esp32-pwm-ixd630-igbt-driver-v2-Gerbers-Version2c165305.zip)
 
 [The components list](https://github.com/metanurb21/esp32_igbt_driver/blob/main/files/pick_and_place.csv)
 
